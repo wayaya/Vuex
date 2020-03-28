@@ -1,8 +1,8 @@
-'use strict'
-const path = require('path')
-const utils = require('./utils')
-const config = require('../config')
-const vueLoaderConfig = require('./vue-loader.conf')
+'use strict';
+const path = require('path');
+const utils = require('./utils');
+const config = require('../config');
+const vueLoaderConfig = require('./vue-loader.conf');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -10,6 +10,7 @@ function resolve (dir) {
 
 
 
+// noinspection JSUnresolvedVariable
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
@@ -23,10 +24,10 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json'], // 省略部分扩展名,真无聊
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src'), // 使用@ 代替 src字符串,这个也挺无聊
     }
   },
   module: {
